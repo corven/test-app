@@ -10,7 +10,8 @@
         android:layout_margin="10dp"
         android:maxWidth="80dp"
         android:minHeight="60dp"
-        android:onClick="onClickImg" />
+        android:onClick="onClickImg"
+        android:background="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,11 +54,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Заголовок вопроса"
         android:id="@+id/tvQuestion"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/imgAva"
-        android:textSize="14dp" />
+        android:textSize="14dp"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

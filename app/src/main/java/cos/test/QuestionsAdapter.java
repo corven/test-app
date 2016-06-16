@@ -61,8 +61,11 @@ public class QuestionsAdapter extends ArrayAdapter<Question>{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), QuestionActivity.class);
-                intent.putExtra("link", currentQuestion.getLinkQuestion());
-                v.getContext().startActivity(intent);
+                if (currentQuestion.getLinkProfile() != "") {
+                    intent.putExtra("link", currentQuestion.getLinkProfile());
+                    v.getContext().startActivity(intent);
+                }
+
             }
         });
 

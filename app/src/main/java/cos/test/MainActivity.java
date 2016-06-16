@@ -91,23 +91,28 @@ public class MainActivity extends AppCompatActivity {
         JSONArray items = response.getJSONArray("items");
 
         for (int i = 0; i < items.length(); i++) {
+            int id = items.getJSONObject(i).getInt("question_id");
+            String title = items.getJSONObject(i).getString("title");
+            String dateCreate = items.getJSONObject(i).getString("creation_date");
+            int count = items.getJSONObject(i).getInt("answer_count");
+            String link = items.getJSONObject(i).getString("link");
+
+            JSONObject owner = items.getJSONObject(i).getJSONObject("owner");
+            String image = "";
+            String linkProfile = "";
             try {
-                int id = items.getJSONObject(i).getInt("question_id");
-                String title = items.getJSONObject(i).getString("title");
-                String dateCreate = items.getJSONObject(i).getString("creation_date");
-                int count = items.getJSONObject(i).getInt("answer_count");
-                String link = items.getJSONObject(i).getString("link");
-
-                JSONObject owner = items.getJSONObject(i).getJSONObject("owner");
-
-                String image = owner.getString("profile_image");
-                String linkProfile = owner.getString("link");
-                String userName = owner.getString("display_name");
-                Question question = new Question(id, title, image, userName, dateCreate, count, link, linkProfile);
-                questions.add(question);
+                image = owner.getString("profile_image");
             }catch (JSONException e) {
                 System.out.println(e);
             }
+            try {
+                linkProfile = owner.getString("link");
+            }catch (JSONException e) {
+                System.out.println(e);
+            }
+            String userName = owner.getString("display_name");
+            Question question = new Question(id, title, image, userName, dateCreate, count, link, linkProfile);
+            questions.add(question);
         }
     }
 }
