@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imgAva"
+        android:layout_margin="10dp"
+        android:maxWidth="80dp"
+        android:minHeight="60dp"
+        android:onClick="onClickImg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="ФИО"
+        android:id="@+id/tvUserName"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@+id/imgAva"
+        android:layout_toEndOf="@+id/imgAva"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="26.06.2016"
+        android:id="@+id/tvDateCreateQuestion"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/tvUserName"
+        android:layout_alignStart="@+id/tvCountAnswers"
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Количество ответов: "
+        android:id="@+id/tvCountAnswers"
+        android:layout_below="@+id/tvDateCreateQuestion"
+        android:layout_alignStart="@+id/tvUserName"
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Заголовок вопроса"
+        android:id="@+id/tvQuestion"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/imgAva"
+        android:textSize="14dp" />
+</RelativeLayout>
